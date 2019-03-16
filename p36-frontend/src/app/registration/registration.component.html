@@ -11,7 +11,9 @@
             <!--<label for="form58">Example label</label>-->
             <input mdbInput placeholder="Last Name" type="text" id="lastName" class="form-control p36-input" formControlName="lastName">
             <input mdbInput placeholder="Email" type="text" id="email" class="form-control p36-input" formControlName="emailAddress">
-            <div class="p36-btn-container">
+            <input placeholder="Password" type="password" id="passw1" class="form-control p36-input" >
+            <input placeholder="Password" type="password" id="passw2" class="form-control p36-input" >
+            <div class="p36-btn-container p36-reg-btn-container">
                <button type="button" class="btn p36-btn" (click)="goToNextStep()" [disabled]="!personalValid" id="regNextButton">Next</button>
 
             </div>
@@ -24,7 +26,7 @@
               <input mdbInput placeholder="Zip Code" type="text" id="zip" class="form-control p36-input" formControlName="zip">
               <input mdbInput placeholder="City" type="text" id="city" class="form-control p36-input" formControlName="city">
               <input mdbInput placeholder="Street" type="text" id="street" class="form-control p36-input" formControlName="street">
-                  <div class="p36-btn-container">
+                  <div class="p36-btn-container p36-reg-btn-container">
             <button type="submit" class="btn p36-btn" [disabled]="!regForm.valid" (click)="submitRegData()" id="regDoneButton">Done</button>
                   </div>
               </div>

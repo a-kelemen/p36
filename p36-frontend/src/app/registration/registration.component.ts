@@ -1,7 +1,8 @@
-import {Component, OnInit, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-registration',
@@ -21,22 +22,6 @@ export class RegistrationComponent implements OnInit {
             street: ['', Validators.required]
         }),
     });
-    //@ViewChild('regForm') regForm;
-
-
-
-    // regForm = new FormGroup({
-    //     firstName: new FormControl(''),
-    //     lastName: new FormControl(''),
-    //     emailAddress: new FormControl(''),
-    //     country: new FormControl(''),
-    //     state: new FormControl(''),
-    //     zip: new FormControl(''),
-    //     city: new FormControl(''),
-    //     street: new FormControl('')
-    // });
-    //firstName = new FormControl('');
-    // lastName = new FormControl('');
 
     personalForm: boolean;
     addressForm: boolean;
@@ -45,7 +30,7 @@ export class RegistrationComponent implements OnInit {
     firstNameField: any;
     private personalValid: boolean;
 
-    constructor(private fb: FormBuilder) { }
+    constructor(private fb: FormBuilder, private router: Router) { }
 
     ngOnInit() {
         this.personalForm = true;
@@ -66,13 +51,13 @@ export class RegistrationComponent implements OnInit {
 
 
     submitRegData() {
-
+        // submit data
+        this.router.navigate(["/dashboard"]);
     }
 
     onSubmit() {
         console.warn(this.regForm.value);
         console.warn(this.regForm.status);
-        console.warn(this.regForm.get('lastName').invalid);
     }
 
     onChanges(): void {
