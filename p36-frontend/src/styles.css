@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+.p36-input{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.p36-btn{
+    width: 100%;
+    background-color: #FFCD19;
+}
+
+html {
+    background-color: #999999;
+}
+body {
+    background-color: #999999;
+}
+.p36-background{
+    background-color: #999999;
+}
+
+.p36-container{
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.p36-btn-container{
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+}
+
+.p36-btn[disabled] {
+    background-color: #B2B2B2;
+}
+
