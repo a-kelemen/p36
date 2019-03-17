@@ -20,7 +20,7 @@ public class User {
     private String lastName;
 
     @Column
-    private String userName;
+    private String username;
 
     @Column
     private String emailAddress;
@@ -35,6 +35,6 @@ public class User {
 
     @OneToOne
     @JoinColumn(name = "card_id", referencedColumnName = "id")
-    private List<BankCard> bankCard;
+    private BankCard bankCard;
 
 }

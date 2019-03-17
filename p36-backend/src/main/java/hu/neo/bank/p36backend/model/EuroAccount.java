@@ -15,9 +15,9 @@ public class EuroAccount {
     @Column
     private int accountNumber;
 
-    @OneToOne(mappedBy = "EUR")
+    @OneToOne(mappedBy = "euroAccount")
     private User user;
 
-    @OneToOne(mappedBy = "EUR")
+    @OneToOne(mappedBy = "euroAccount")
     private BankCard card;
 }

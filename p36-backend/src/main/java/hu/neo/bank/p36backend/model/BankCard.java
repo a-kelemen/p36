@@ -12,7 +12,7 @@ public class BankCard {
     @Id
     private int id;
 
-    @OneToOne(mappedBy = "bankcard")
+    @OneToOne(mappedBy = "bankCard")
     private User user;
 
     @OneToOne

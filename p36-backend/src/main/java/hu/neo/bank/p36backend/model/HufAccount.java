@@ -15,10 +15,10 @@ public class HufAccount {
     @Column
     private int accountNumber;
 
-    @OneToOne(mappedBy = "HUF")
+    @OneToOne(mappedBy = "hufAccount")
     private User user;
 
-    @OneToOne(mappedBy = "HUF")
+    @OneToOne(mappedBy = "hufAccount")
     private BankCard card;
 
 }
