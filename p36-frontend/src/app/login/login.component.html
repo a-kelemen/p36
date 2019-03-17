@@ -1,3 +1,46 @@
-<p>
-  login
-</p>
+<div class="p36-container">
+
+
+    <h3>Login</h3>
+
+    <div class="md-form p36-reg-container">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+
+            <div class="p36-input-container">
+                <input placeholder="Email"
+                       type="email"
+                       id="email"
+                       class="form-control p36-input"
+                       formControlName="emailAddress">
+                <div class="p36-input-error"
+                     *ngIf="isEmailInvalid()">
+                    Valid email is required.
+                </div>
+            </div>
+
+            <div class="p36-input-container">
+                <input placeholder="Password"
+                       type="password"
+                       id="password"
+                       class="form-control p36-input"
+                       formControlName="password">
+                <div class="p36-input-error"
+                     *ngIf="isPasswordInvalid()">
+                    Password is required.
+                </div>
+            </div>
+            <div class="p36-btn-container p36-reg-btn-container">
+                <button type="button"
+                        class="btn p36-btn"
+                        (click)="login()"
+                        [disabled]="!loginFormIsValid"
+                        id="loginButton">Log In
+                </button>
+
+            </div>
+
+        </form>
+    </div>
+
+</div>
