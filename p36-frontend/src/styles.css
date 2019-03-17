@@ -1,6 +1,15 @@
 .p36-input{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    /*   margin-top: 20px;
+       margin-bottom: 20px;*/
+    vertical-align: top;
+}
+
+.p36-input-container{
+    height: 70px;
+}
+.p36-input-error{
+    color: red;
+    padding-left: 10px;
 }
 
 .p36-input:focus{
