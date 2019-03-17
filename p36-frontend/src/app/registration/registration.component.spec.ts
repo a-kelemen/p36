@@ -1,8 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RegistrationComponent } from './registration.component';
-import {expect} from "@angular/platform-browser/testing/src/matchers";
-import {describe} from "jasmine";
 
 describe('RegistrationComponent', () => {
   let component: RegistrationComponent;
