@@ -1,3 +1,73 @@
-<p>
-  dashboard
-</p>
+
+<hr>
+<div class="row p36-dashboard">
+  <div class="col-sm-2 p36-menu">
+    <div class="row">
+      <button id="credits"
+              type="button"
+              class="btn p36-menu-btn rounded-0"
+              (click)="menuClick($event)">
+        Credit accounts
+      </button>
+    </div>
+    <div class="row">
+    <button id="personal"
+            type="button"
+            class="btn p36-menu-btn rounded-0"
+            (click)="menuClick($event)">
+      Personal Data
+  </button>
+    </div>
+    <div class="row">
+    <button id="transfer"
+            type="button"
+            class="btn p36-menu-btn rounded-0"
+            (click)="menuClick($event)">
+      Transfer
+    </button>
+  </div>
+    <div class="row">
+      <button id="ownTransfer"
+              type="button"
+              class="btn p36-menu-btn rounded-0"
+              (click)="menuClick($event)">
+        Utalas sajat szamlak kozott
+      </button>
+    </div>
+    <div class="row">
+      <button id="accounts"
+              type="button"
+              class="btn p36-menu-btn rounded-0"
+              (click)="menuClick($event)">
+        Edit Accounts
+      </button>
+    </div>
+  </div>
+  <div class="col-sm-10">
+    <div *ngIf="contentId=='credits'">
+      <p>
+        credits
+      </p>
+    </div>
+    <div *ngIf="contentId=='personal'">
+      <p>
+        personal
+      </p>
+    </div>
+    <div *ngIf="contentId=='transfer'">
+      <p>
+        transfer
+      </p>
+    </div>
+    <div *ngIf="contentId=='accounts'">
+      <p>
+        accounts
+      </p>
+    </div>
+    <div *ngIf="contentId=='ownTransfer'">
+      <p>
+        utalas sajat szamlara
+      </p>
+    </div>
+  </div>
+</div>

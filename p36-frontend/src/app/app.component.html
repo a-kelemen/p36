@@ -1,7 +1,14 @@
-<div style="text-align:center">
+<div *ngIf="!mainTitle" style="text-align:center">
   <h1 id="p36-title">
     {{ title }}
   </h1>
 </div>
-
-<router-outlet></router-outlet>
+<div  *ngIf="mainTitle">
+  <h1 id="p36-main-title">
+    {{ title }}
+  </h1>
+</div>
+<div class="p36-content">
+  <router-outlet (activate)="onRouterOutletActivate($event)">
+  </router-outlet>
+</div>

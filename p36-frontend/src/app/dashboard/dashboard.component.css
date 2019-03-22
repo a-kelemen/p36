@@ -1,0 +1,25 @@
+.p36-menu{
+    background-color: #B2B2B2;
+}
+
+.p36-dashboard{
+      height: 360px;
+}
+
+.p36-menu-btn{
+    background-color: #B2B2B2;
+    padding-left:30px;
+    width:100%;
+    text-align: left;
+    height: 50px;
+
+}
+.p36-menu-btn-active{
+    background-color: #999999;
+    color: #FFCD19;
+}
+
+.p36-menu-btn:focus{
+    outline: none !important;
+    box-shadow: none;
+}
