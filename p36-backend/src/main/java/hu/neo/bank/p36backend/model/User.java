@@ -25,6 +25,13 @@ public class User {
     @Column
     private String emailAddress;
 
+    @Column
+    private String password;
+
+    @Column
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
     @OneToOne
     @JoinColumn(name = "huf_id", referencedColumnName = "id")
     private HufAccount hufAccount;
@@ -36,5 +43,13 @@ public class User {
     @OneToOne
     @JoinColumn(name = "card_id", referencedColumnName = "id")
     private BankCard bankCard;
+
+    @ManyToOne
+    @JoinColumn(name = "address_id", nullable = false)
+    private Address address;
+
+    public enum Role {
+        ROLE_USER, ROLE_ADMIN;
+    }
 
 }

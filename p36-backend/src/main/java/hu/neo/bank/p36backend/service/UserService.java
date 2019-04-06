@@ -3,7 +3,11 @@ package hu.neo.bank.p36backend.service;
 import hu.neo.bank.p36backend.model.User;
 import hu.neo.bank.p36backend.repository.UserRepositoryInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
+@Service
 public class UserService implements UserServiceInterface {
 
     @Autowired
@@ -16,7 +20,7 @@ public class UserService implements UserServiceInterface {
     }
 
     @Override
-    public User findByUsername(String name) {
+    public Optional<User> findByUsername(String name) {
         return userRepository.findByUsername(name);
     }
 }
