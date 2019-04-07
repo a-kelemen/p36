@@ -1,3 +1,6 @@
+CREATE DATABASE IF NOT EXISTS p36;
+USE p36;
+
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
   id int(11) primary key,
