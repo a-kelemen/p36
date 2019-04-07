@@ -25,13 +25,13 @@ public class MyUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> optionalUser = userRepository.findByUsername(username);
+        User optionalUser = userRepository.findByUsername(username);
 
-        if (!optionalUser.isPresent()) {
+        if (optionalUser == null) {
             throw new UsernameNotFoundException(username);
         }
 
-        User user = optionalUser.get();
+        User user = optionalUser;
 
         authenticatedUser.setUser(user);
 

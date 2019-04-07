@@ -8,5 +8,5 @@ public interface UserServiceInterface {
 
     User createUser(User user);
 
-    Optional<User> findByUsername(String name);
+    User findByUsername(String name);
 }

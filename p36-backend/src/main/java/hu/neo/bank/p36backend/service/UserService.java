@@ -20,7 +20,7 @@ public class UserService implements UserServiceInterface {
     }
 
     @Override
-    public Optional<User> findByUsername(String name) {
+    public User findByUsername(String name) {
         return userRepository.findByUsername(name);
     }
 }

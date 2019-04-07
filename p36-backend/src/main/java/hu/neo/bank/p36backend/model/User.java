@@ -1,10 +1,11 @@
 package hu.neo.bank.p36backend.model;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
 
+@Builder
 @Data
 @Entity
 @Table(name = "users")
