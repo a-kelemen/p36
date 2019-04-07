@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
     onChanges(): void {
         this.loginForm.valueChanges.subscribe(val => {
-            if (this.loginForm.get("password").valid && this.loginForm.get("emailAddress").valid) {
+            if (this.loginForm.get('password').valid && this.loginForm.get('emailAddress').valid) {
                 this.loginFormIsValid = true;
             } else {
                 this.loginFormIsValid = false;
@@ -37,15 +37,15 @@ export class LoginComponent implements OnInit {
     }
 
     isEmailInvalid(): boolean {
-        return this.loginForm.get("emailAddress").invalid && this.loginForm.get("emailAddress").dirty;
+        return this.loginForm.get('emailAddress').invalid && this.loginForm.get('emailAddress').dirty;
     }
 
     isPasswordInvalid(): boolean {
-        return this.loginForm.get("password").invalid && this.loginForm.get("password").dirty;
+        return this.loginForm.get('password').invalid && this.loginForm.get('password').dirty;
     }
 
-    login(): void{
+    login(): void {
         console.warn(this.loginForm.value);
-        this.router.navigate(["/dashboard"]);
+        this.router.navigate(['/dashboard']);
     }
 }

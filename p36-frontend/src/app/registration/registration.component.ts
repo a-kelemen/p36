@@ -59,7 +59,7 @@ export class RegistrationComponent implements OnInit {
     submitRegData() {
         // submit data
         console.warn(this.regForm.value);
-        this.router.navigate(["/dashboard"]);
+        this.router.navigate(['/dashboard']);
     }
 
     onSubmit() {
@@ -69,35 +69,35 @@ export class RegistrationComponent implements OnInit {
 
     onChanges(): void {
             this.regForm.valueChanges.subscribe(val => {
-            this.isPersonalValid()
+            this.isPersonalValid();
         });
     }
 
     private isPersonalValid(): void {
-        if(this.lastNameField.valid
+        if (this.lastNameField.valid
             && this.firstNameField.valid
             && this.emailField.valid
             && this.passw1.valid
-            && this.passw2.valid){
-            if(this.passw1.value == this.passw2.value){
+            && this.passw2.valid) {
+            if (this.passw1.value === this.passw2.value) {
                 this.personalValid = true;
-            }else{
-                //console.log("passwerror");
+            } else {
+                // console.log("passwerror");
             }
-        }else{
+        } else {
            // console.log("invalid");
             this.personalValid = false;
         }
     }
-    isInputInvalid(field: string):boolean{
+    isInputInvalid(field: string): boolean {
         return this.regForm.get(field).invalid && this.regForm.get(field).dirty;
     }
-    isAddressInputInvalid(field: string):boolean{
+    isAddressInputInvalid(field: string): boolean {
         return this.regForm.get('address').get(field).invalid && this.regForm.get('address').get(field).dirty;
     }
 
-    isPasswordInvalid() :boolean{
-        return this.passw1.value != this.passw2.value
+    isPasswordInvalid(): boolean {
+        return this.passw1.value !== this.passw2.value
             && this.passw2.dirty;
     }
 }
