@@ -15,6 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.MockitoAnnotations.initMocks;
 
@@ -47,7 +48,11 @@ public class UserServiceTest {
                 .role(User.Role.ROLE_USER).build();
         //System.out.println(user.toString()); //nullpointer exception
 
+        Mockito.when(mockUserRepository.save(any())).thenReturn(user);
+
         Mockito.when(mockUserRepository.findByUsername(anyString())).thenReturn(user);
+
+        //Mockito.when(mockUserRepository.findById())
     }
 
     @Test
@@ -60,8 +65,18 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testCreateUser() {
+    public void test() {
 
+    }
+
+    @Test
+    public void testCreateUser() {
+        final String firstname = "Tom";
+        //System.out.println(User.builder().build());
+        //System.out.println(mockUserRepository.save(User.builder().build()));
+        User u = mockUserRepository.save(User.builder().build());
+        //System.out.println(u.getFirstname());
+        assertEquals(firstname, u.getFirstname());
     }
 
 }
