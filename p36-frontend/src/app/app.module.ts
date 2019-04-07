@@ -6,21 +6,23 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { StartPageComponent } from './startpage/startpage.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent,
-    RegistrationComponent,
-    StartPageComponent,
-    DashboardComponent
+      AppComponent,
+      StartPageComponent,
+      LoginComponent,
+      RegistrationComponent,
+      DashboardComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule
+      ReactiveFormsModule,
+      FormsModule,
+      BrowserModule,
+      AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

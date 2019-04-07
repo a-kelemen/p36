@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import {ifTrue} from "codelyzer/util/function";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-login',
