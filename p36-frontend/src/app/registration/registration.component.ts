@@ -93,7 +93,7 @@ export class RegistrationComponent implements OnInit {
         return this.regForm.get(field).invalid && this.regForm.get(field).dirty;
     }
     isAddressInputInvalid(field: string): boolean {
-        return this.regForm.get('address').get(field).invalid && this.regForm.get('address').get(field).dirty;
+        return this.regForm.get("address").get(field).invalid && this.regForm.get('address').get(field).dirty;
     }
 
     isPasswordInvalid(): boolean {
