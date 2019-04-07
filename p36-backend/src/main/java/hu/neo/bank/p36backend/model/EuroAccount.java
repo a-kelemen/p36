@@ -14,10 +14,10 @@ public class EuroAccount {
 
     @Column
     private int accountNumber;
-
+/*
     @OneToOne(mappedBy = "euroAccount")
     private User user;
-
+*/
     @OneToOne(mappedBy = "euroAccount")
     private BankCard card;
 }

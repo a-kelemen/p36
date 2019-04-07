@@ -20,7 +20,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                /*.cors()
+                .cors()
                     .and()
                 .csrf().disable()
                 .authorizeRequests()
@@ -38,8 +38,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         .disable()
                     .and()
                 .sessionManagement()
-                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS);*/
-
+                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+/*
                 .cors()
                     .and()
                 .csrf().disable()
@@ -49,19 +49,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic()
                     .and()
                 .sessionManagement()
-                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS);*/
     }
 
     @Autowired
     protected void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        /*auth
+        auth
 
                 .userDetailsService(userDetailsService)
-                .passwordEncoder(passwordEncoder());*/
-        String hashedPassword = passwordEncoder().encode("password");
+                .passwordEncoder(passwordEncoder());
+        /*String hashedPassword = passwordEncoder().encode("duck");
+        System.out.println(hashedPassword);
         auth
                 .inMemoryAuthentication()
-                .withUser("user").password(hashedPassword).roles("USER");
+                .withUser("user").password(hashedPassword).roles("USER");*/
     }
 
     @Bean

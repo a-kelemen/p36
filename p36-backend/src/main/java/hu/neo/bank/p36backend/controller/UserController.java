@@ -4,6 +4,7 @@ import hu.neo.bank.p36backend.model.User;
 import hu.neo.bank.p36backend.service.UserServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -14,6 +15,9 @@ public class UserController {
 
     @Autowired
     private UserServiceInterface userService;
+
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
 
     @GetMapping("/hello")
     public String hello() {
@@ -26,9 +30,12 @@ public class UserController {
         Optional<User> u = userService.findByUsername(user.getUsername()); //must check
 
         // CHECK IF USER EXISTS
-        //if(optionalUser.isPresent()) {
+        if(u.isPresent()) {
+            return ResponseEntity.badRequest().build();
+        }
 
-        //}
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setRole(User.Role.ROLE_USER);
 
         return ResponseEntity.ok(userService.createUser(user));
     }
