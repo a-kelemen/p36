@@ -15,7 +15,7 @@ public class User {
     private int id;
 
     @Column
-    private String firstname; // firstName-re sql unkonw column name hibát dobott
+    private String firstname; // firstName-re sql unknowns column name hibát dobott
 
     @Column
     private String lastname; // dettó

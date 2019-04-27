@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS p36;
-USE p36;
+--CREATE DATABASE IF NOT EXISTS p36;
+--USE p36;
 
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
@@ -17,4 +17,4 @@ password: duck
 */
 
 INSERT INTO users(id, firstName, lastName, username, email, password, role)
- VALUES (1, 'Donald', 'Duck', 'dd', 'dd@duck.com', '$2a$10$839dntJVZi/hA1uFbMDyOufs2bbGo6gRNQyvUE7r3FiI0Wb1WZMzS', 'ROLE_USER');
+ VALUES (1, 'Donald', 'Duck', 'dd', 'dd@duck.com', '$2a$10$839dntJVZi/hA1uFbMDyOufs2bbGo6gRNQyvUE7r3FiI0Wb1WZMzS', 'ROLE_ADMIN');
