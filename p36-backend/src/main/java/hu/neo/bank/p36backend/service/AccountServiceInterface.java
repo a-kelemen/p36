@@ -2,10 +2,10 @@ package hu.neo.bank.p36backend.service;
 
 public interface AccountServiceInterface {
 
-    void getAmount();
+    int getAmount(int userId, int accountId);
 
-    void increaseAmount(int userId, int amount);
+    void increaseAmount(int userId, int amount, int accountId);
 
-    void decreaseAmount();
+    void decreaseAmount(int userId, int amount, int accountId);
 
 }

@@ -20,8 +20,8 @@ public class User {
     @Column
     private String lastname; // dettó
 
-    @Column
-    private String username;
+    //@Column
+    //private String username;
 
     @Column
     private String email;
@@ -32,23 +32,23 @@ public class User {
     @Column
     @Enumerated(EnumType.STRING)
     private Role role;
-    /*
-        @OneToOne
-        @JoinColumn(name = "huf_id", referencedColumnName = "id")
-        private HufAccount hufAccount;
 
-        @OneToOne
-        @JoinColumn(name = "euro_id", referencedColumnName = "id")
-        private EuroAccount euroAccount;
+    @OneToOne
+    @JoinColumn(name = "huf_id", referencedColumnName = "id")
+    private HufAccount hufAccount;
 
-        @OneToOne
-        @JoinColumn(name = "card_id", referencedColumnName = "id")
-        private BankCard bankCard;
+    @OneToOne
+    @JoinColumn(name = "euro_id", referencedColumnName = "id")
+    private EuroAccount euroAccount;
 
-        @ManyToOne
-        @JoinColumn(name = "address_id", nullable = false)
-        private Address address;
-    */
+    @OneToOne
+    @JoinColumn(name = "card_id", referencedColumnName = "id")
+    private BankCard bankCard;
+
+    @ManyToOne
+    @JoinColumn(name = "address_id", nullable = false)
+    private Address address;
+
     public enum Role {
         ROLE_USER, ROLE_ADMIN;
     }

@@ -14,10 +14,13 @@ public class HufAccount {
 
     @Column
     private int accountNumber;
-/*
+
+    @Column
+    private int amount;
+
     @OneToOne(mappedBy = "hufAccount")
     private User user;
-*/
+
     @OneToOne(mappedBy = "hufAccount")
     private BankCard card;
 

@@ -24,8 +24,8 @@ public class Address {
 
     @Column
     private int streetNumber;
-/*
+
     @OneToMany(mappedBy = "address")
     private Set<User> users;
-*/
+
 }

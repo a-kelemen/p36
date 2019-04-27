@@ -37,7 +37,7 @@ public class UserController {
     @CrossOrigin
     @PostMapping("/registration")
     public ResponseEntity<User> createUser(@RequestBody User user) {
-        User u = userService.findByUsername(user.getUsername()); //must check
+        User u = userService.findUserByFirstname(user.getFirstname()); //must check
 
         // CHECK IF USER EXISTS
         if(u != null) {
@@ -53,7 +53,10 @@ public class UserController {
     @CrossOrigin
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestBody User user) {
-        User u = userService.findByUsername(user.getUsername()); //must check
+        User u = userService.findUserByEmail(user.getEmail()); //must check
+        if(u == null) {
+            return ResponseEntity.badRequest().build();
+        }
         return ResponseEntity.ok(u);
     }
 }

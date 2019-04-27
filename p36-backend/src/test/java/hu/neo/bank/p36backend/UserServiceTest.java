@@ -42,7 +42,7 @@ public class UserServiceTest {
                 .id(2)
                 .firstname("Tom")
                 .lastname("Denem")
-                .username("voldemort")
+                //.username("voldemort")
                 .password("pureblood")
                 .email("adava@kedavra.com")
                 .role(User.Role.ROLE_USER).build();
@@ -50,18 +50,18 @@ public class UserServiceTest {
 
         Mockito.when(mockUserRepository.save(any())).thenReturn(user);
 
-        Mockito.when(mockUserRepository.findByUsername(anyString())).thenReturn(user);
+        Mockito.when(mockUserRepository.findUserByFirstname(anyString())).thenReturn(user);
 
         //Mockito.when(mockUserRepository.findById())
     }
 
     @Test
     public void testFindByUsername() {
-        final String name = "voldemort";
+        final String name = "Tom";
         //System.out.println(mockUserRepository.findByUsername(name).getUsername()); //voldemort
         //System.out.println(userServiceUnderTest.findByUsername(name));
-        final User result = mockUserRepository.findByUsername(name);
-        assertEquals(name, result.getUsername());
+        final User result = mockUserRepository.findUserByFirstname(name);
+        assertEquals(name, result.getFirstname());
     }
 
     @Test

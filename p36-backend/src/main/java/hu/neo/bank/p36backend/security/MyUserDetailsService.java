@@ -23,12 +23,13 @@ public class MyUserDetailsService implements UserDetailsService {
     @Autowired
     private AuthenticatedUser authenticatedUser;
 
+    //now: username = firstname
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User optionalUser = userRepository.findByUsername(username);
+    public UserDetails loadUserByUsername(String firstname) throws UsernameNotFoundException {
+        User optionalUser = userRepository.findUserByFirstname(firstname);
 
         if (optionalUser == null) {
-            throw new UsernameNotFoundException(username);
+            throw new UsernameNotFoundException(firstname);
         }
 
         User user = optionalUser;
@@ -38,6 +39,6 @@ public class MyUserDetailsService implements UserDetailsService {
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
 
         grantedAuthorities.add(new SimpleGrantedAuthority(user.getRole().toString()));
-        return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), grantedAuthorities);
+        return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), grantedAuthorities);
     }
 }

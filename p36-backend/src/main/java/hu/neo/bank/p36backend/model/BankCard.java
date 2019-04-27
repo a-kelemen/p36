@@ -11,10 +11,10 @@ public class BankCard {
 
     @Id
     private int id;
-/*
+
     @OneToOne(mappedBy = "bankCard")
     private User user;
-*/
+
     @OneToOne
     @JoinColumn(name = "euro_id", referencedColumnName = "id")
     private EuroAccount euroAccount;

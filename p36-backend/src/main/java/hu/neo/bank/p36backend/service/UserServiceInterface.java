@@ -10,7 +10,9 @@ public interface UserServiceInterface {
 
     User createUser(User user);
 
-    User findByUsername(String name);
+    //User findByUsername(String name);
 
     User findUserByFirstname(String firstName);
+
+    User findUserByEmail(String email);
 }
