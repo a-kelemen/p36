@@ -4,7 +4,7 @@ public interface AccountServiceInterface {
 
     void getAmount();
 
-    void increaseAmount();
+    void increaseAmount(int userId, int amount);
 
     void decreaseAmount();
 

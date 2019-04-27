@@ -24,6 +24,16 @@ public class UserController {
         return "Hello";
     }
 
+    @GetMapping("/personal")
+    public User getUser(int userId) {
+        User result = null;
+        User u = userService.findUserById(userId);
+        if(u != null) {
+            result = u;
+        }
+        return result;
+    }
+
     @CrossOrigin
     @PostMapping("/registration")
     public ResponseEntity<User> createUser(@RequestBody User user) {

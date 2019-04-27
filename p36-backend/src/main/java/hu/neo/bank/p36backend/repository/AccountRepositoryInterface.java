@@ -1,4 +1,9 @@
 package hu.neo.bank.p36backend.repository;
 
-public interface AccountRepositoryInterface {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface AccountRepositoryInterface extends JpaRepository {
+
 }
